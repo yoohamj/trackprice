@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TrackPrice
+
+Welcome to TrackPrice! [TrackPrice](https://trackprice.ca) is your go-to platform for comparing product prices across various vendors and tracking price changes over time. Our mission is to help you find the best deals and save money on your purchases.
+
+## Features
+
+- **Price Comparison:** Compare prices of products across different online retailers to ensure you're getting the best deal.
+- **Price Tracking:** Track historical price data and set alerts to get notified when prices drop.
+- **Vendor Insights:** View detailed information about vendors and their pricing trends.
+- **User-Friendly Interface:** Easy-to-use search and navigation to quickly find the products you’re interested in.
 
 ## Getting Started
 
-First, run the development server:
+To get started with TrackPrice, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Visit the Website:** Go to [TrackPrice](https://trackprice.ca).
+2. **Search for a Product:** Use the search bar to enter the product name or category you’re interested in.
+3. **Compare Prices:** View the price comparison results to find the best deals from different vendors.
+4. **Track Prices:** Click on a product to view its price history and set up price alerts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How It Works
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+TrackPrice collects and aggregates pricing data from a variety of online retailers. Our system continuously monitors these prices and updates them in real-time to provide you with accurate and up-to-date information.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Data Sources
 
-## Learn More
+We source pricing information from a wide range of vendors to ensure comprehensive and competitive comparisons. The list of vendors we track includes major e-commerce platforms and niche stores.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We welcome contributions from the community! If you have suggestions for new features, improvements, or spot any issues, please feel free to contribute:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Fork the Repository:** Fork the TrackPrice repository on GitHub.
+2. **Make Changes:** Create a new branch and make your changes.
+3. **Submit a Pull Request:** Open a pull request with a clear description of your changes.
 
-## Deploy on Vercel
+For more details on contributing, please refer to our [CONTRIBUTING.md](CONTRIBUTING.md).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact Us
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any questions, feedback, or need support, please reach out to us at [support@trackprice.ca](mailto:support@trackprice.ca).
+
+## License
+
+TrackPrice is licensed under the [MIT License](LICENSE).
