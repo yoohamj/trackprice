@@ -1,10 +1,43 @@
-import { getCollectionProducts } from '../lib/shopify';
 import Link from 'next/link';
 import { GridTileImage } from './grid/tile';
 
-export async function Carousel() {
-  // Collections that start with `hidden-*` are hidden from the search page.
-  const products = await getCollectionProducts({ collection: 'hidden-homepage-carousel' });
+export function Carousel() {
+  // Static data for demonstration purposes
+  const products = [
+    {
+      handle: 'product-1',
+      featuredImage: { url: '/images/product1.jpg' },
+      title: 'Product 1',
+      priceRange: {
+        maxVariantPrice: {
+          amount: '100.00',
+          currencyCode: 'USD'
+        }
+      }
+    },
+    {
+      handle: 'product-2',
+      featuredImage: { url: '/images/product2.jpg' },
+      title: 'Product 2',
+      priceRange: {
+        maxVariantPrice: {
+          amount: '200.00',
+          currencyCode: 'USD'
+        }
+      }
+    },
+    {
+      handle: 'product-3',
+      featuredImage: { url: '/images/product3.jpg' },
+      title: 'Product 3',
+      priceRange: {
+        maxVariantPrice: {
+          amount: '300.00',
+          currencyCode: 'USD'
+        }
+      }
+    }
+  ];
 
   if (!products?.length) return null;
 

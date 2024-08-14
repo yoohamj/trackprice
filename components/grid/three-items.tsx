@@ -1,6 +1,4 @@
 import { GridTileImage } from './tile';
-import { getCollectionProducts } from '../../lib/shopify';
-import type { Product } from '../../lib/shopify/types';
 import Link from 'next/link';
 
 function ThreeItemGridItem({
@@ -8,7 +6,7 @@ function ThreeItemGridItem({
   size,
   priority
 }: {
-  item: Product;
+  item: any; // Change to any for static data
   size: 'full' | 'half';
   priority?: boolean;
 }) {
@@ -41,11 +39,43 @@ function ThreeItemGridItem({
   );
 }
 
-export async function ThreeItemGrid() {
-  // Collections that start with `hidden-*` are hidden from the search page.
-  const homepageItems = await getCollectionProducts({
-    collection: 'hidden-homepage-featured-items'
-  });
+export function ThreeItemGrid() {
+  // Static data for demonstration purposes
+  const homepageItems = [
+    {
+      handle: 'product-1',
+      featuredImage: { url: '/images/product1.jpg' },
+      title: 'Product 1',
+      priceRange: {
+        maxVariantPrice: {
+          amount: '100.00',
+          currencyCode: 'USD'
+        }
+      }
+    },
+    {
+      handle: 'product-2',
+      featuredImage: { url: '/images/product2.jpg' },
+      title: 'Product 2',
+      priceRange: {
+        maxVariantPrice: {
+          amount: '200.00',
+          currencyCode: 'USD'
+        }
+      }
+    },
+    {
+      handle: 'product-3',
+      featuredImage: { url: '/images/product3.jpg' },
+      title: 'Product 3',
+      priceRange: {
+        maxVariantPrice: {
+          amount: '300.00',
+          currencyCode: 'USD'
+        }
+      }
+    }
+  ];
 
   if (!homepageItems[0] || !homepageItems[1] || !homepageItems[2]) return null;
 
