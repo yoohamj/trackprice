@@ -19,9 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.variable}>
       <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-          <Navbar />
-          <main>
-          </main>
+        <Navbar />
+        <main>
+          {children} {/* Render the page content here */}
+        </main>
       </body>
     </html>
   );
