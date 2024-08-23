@@ -7,8 +7,10 @@ import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 
-import Footer from 'components/layout/footer';
-import Table from 'components/search/table'
+import { ThreeItemGrid } from '@/components/grid/three-items';
+import  Footer  from '@/components/layout/footer'
+
+
 
 Amplify.configure(outputs);
 
@@ -23,12 +25,10 @@ export const metadata = {
 
 export default function App() {
   return (
-    <main>
-      <Table />
+    <>
+      <ThreeItemGrid />
       <Footer />
-
-    </main>
-        
+    </>
       )
 }
 

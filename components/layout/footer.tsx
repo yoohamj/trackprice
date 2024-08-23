@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import FooterMenu from 'components/layout/footer-menu';
 import LogoSquare from 'components/logo-square';
 import { Suspense } from 'react';
 
@@ -8,16 +7,7 @@ const { COMPANY_NAME, SITE_NAME } = process.env;
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
-  const skeleton = 'w-full h-6 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700';
   const copyrightName = COMPANY_NAME || SITE_NAME || '';
-
-  // Example menu data to pass to FooterMenu
-  const menu = [
-    { title: 'Home', path: '/' },
-    { title: 'About', path: '/about' },
-    { title: 'Contact', path: '/contact' },
-    // Add more items as needed
-  ];
 
   return (
     <footer className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -25,23 +15,16 @@ export default function Footer() {
         <div>
           <Link className="flex items-center gap-2 text-black md:pt-1 dark:text-white" href="/">
             <LogoSquare size="sm" />
-            <span className="uppercase">{SITE_NAME}</span>
+            <span className="uppercase">Track Price</span>
           </Link>
         </div>
-        <Suspense
-          fallback={
-            <div className="flex h-[188px] w-[200px] flex-col gap-2">
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-            </div>
-          }
-        >
-          <FooterMenu menu={menu} />
-        </Suspense>
+        <div className="flex flex-col gap-4 md:ml-auto">
+          <Link href="/" className="hover:text-neutral-700 dark:hover:text-neutral-300">Home</Link>
+          <Link href="/about" className="hover:text-neutral-700 dark:hover:text-neutral-300">About Us</Link>
+          <Link href="/services" className="hover:text-neutral-700 dark:hover:text-neutral-300">Services</Link>
+          <Link href="/contact" className="hover:text-neutral-700 dark:hover:text-neutral-300">Contact</Link>
+          <Link href="/privacy-policy" className="hover:text-neutral-700 dark:hover:text-neutral-300">Privacy Policy</Link>
+        </div>
         <div className="md:ml-auto">
           <a
             className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-neutral-200 bg-white text-xs text-black dark:border-neutral-700 dark:bg-black dark:text-white"
@@ -60,13 +43,9 @@ export default function Footer() {
             &copy; {copyrightDate} {copyrightName}
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
-          <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-          <p>
-            <a href="https://github.com/vercel/commerce">View the source</a>
-          </p>
           <p className="md:ml-auto">
             <a href="https://vercel.com" className="text-black dark:text-white">
-              Created by ▲ Vercel
+            © PetUs Inc. Toronto, Ontario, Canada
             </a>
           </p>
         </div>

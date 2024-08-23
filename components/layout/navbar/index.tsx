@@ -2,7 +2,6 @@ import LogoSquare from 'components/logo-square';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Search, { SearchSkeleton } from './search';
-
 const { SITE_NAME } = process.env;
 
 export async function Navbar() {
@@ -22,7 +21,7 @@ export async function Navbar() {
           >
             <LogoSquare />
             <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-              {SITE_NAME}
+              Track Price
             </div>
           </Link>
         </div>
