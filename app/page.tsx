@@ -10,8 +10,6 @@ import "@aws-amplify/ui-react/styles.css";
 import { ThreeItemGrid } from '@/components/grid/three-items';
 import  Footer  from '@/components/layout/footer'
 
-
-
 Amplify.configure(outputs);
 
 const client = generateClient<Schema>();
