@@ -1,58 +1,105 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import ChartComponent from '../../components/item/chart'; // Use absolute import for better readability
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
 
-const ItemPage: React.FC = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Set the flag to true when the component is mounted on the client
-    setIsClient(true);
-  }, []);
+const ChartComponent: React.FC = () => {
+  const chartConfig: { series: ApexAxisChartSeries; options: ApexOptions } = {
+    series: [
+      {
+        name: 'Sales',
+        data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+      },
+    ],
+    options: {
+      chart: {
+        type: 'line',
+        height: 240,
+        toolbar: {
+          show: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      colors: ['#020617'],
+      stroke: {
+        curve: 'smooth',
+      },
+      xaxis: {
+        categories: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: {
+          style: {
+            colors: '#616161',
+            fontSize: '12px',
+          },
+        },
+      },
+      yaxis: {
+        labels: {
+          style: {
+            colors: '#616161',
+            fontSize: '12px',
+          },
+        },
+      },
+      grid: {
+        borderColor: '#dddddd',
+        strokeDashArray: 5,
+        xaxis: {
+          lines: {
+            show: true,
+          },
+        },
+        padding: {
+          top: 5,
+          right: 20,
+        },
+      },
+      tooltip: {
+        theme: 'dark',
+      },
+    },
+  };
 
   return (
-    <div className="p-6 min-h-screen max-w-7xl mx-auto">
-      {/* Item Title aligned to the left */}
-      <h1 className="text-4xl font-bold mb-8">Item Page</h1>
-
-      {/* Three-column layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left column: Product Image */}
-        <div className="flex justify-center items-start">
-          <img
-            src="https://via.placeholder.com/300" // Placeholder image
-            alt="Product"
-            className="max-w-full h-auto rounded-lg shadow-md"
-          />
+    <div className="relative flex flex-col rounded-xl bg-white shadow-md">
+      <div className="relative mx-4 mt-4 flex flex-col md:flex-row md:items-center">
+        <div className="w-max rounded-lg bg-gray-900 p-5 text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
+            ></path>
+          </svg>
         </div>
-
-        {/* Middle column: Price and Ranked List */}
-        <div className="flex flex-col items-start">
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Price: $299.99</h2>
-          </div>
-          <div className="w-full">
-            <h3 className="text-lg font-bold mb-2">Top 5 Cheapest Prices:</h3>
-            <ul className="list-decimal list-inside">
-              <li>Website 1 - $290.00</li>
-              <li>Website 2 - $295.00</li>
-              <li>Website 3 - $297.50</li>
-              <li>Website 4 - $298.00</li>
-              <li>Website 5 - $299.00</li>
-            </ul>
-          </div>
+        <div>
+          <h6 className="font-sans text-base font-semibold text-blue-gray-900">Line Chart</h6>
+          <p className="max-w-sm font-sans text-sm text-gray-700">
+            Visualize your data in a simple way using the @material-tailwind/html chart plugin.
+          </p>
         </div>
-
-        {/* Right column: Chart */}
-        {isClient && (
-          <div className="flex justify-center items-center">
-            <ChartComponent />
-          </div>
-        )}
+      </div>
+      <div className="pt-6 px-2 pb-0">
+        <ReactApexChart
+          options={chartConfig.options}
+          series={chartConfig.series}
+          type="line"
+          height={240}
+        />
       </div>
     </div>
   );
 };
 
-export default ItemPage;
+export default ChartComponent;

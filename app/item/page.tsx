@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import ChartComponent from '../../components/item/chart'; // Use absolute import for better readability
+import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import ChartComponent without SSR
+const ChartComponent = dynamic(() => import('../../components/item/chart'), {
+  ssr: false,
+});
 
 const ItemPage: React.FC = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
-    <div className="p-6 min-h-screen">
+    <div className="p-6 min-h-screen max-w-7xl mx-auto">
       {/* Item Title aligned to the left */}
       <h1 className="text-4xl font-bold mb-8">Item Page</h1>
 
@@ -20,7 +19,7 @@ const ItemPage: React.FC = () => {
         {/* Left column: Product Image */}
         <div className="flex justify-center items-start">
           <img
-            src="https://via.placeholder.com/300" // Placeholder image
+            src="https://via.placeholder.com/300"
             alt="Product"
             className="max-w-full h-auto rounded-lg shadow-md"
           />
@@ -44,11 +43,9 @@ const ItemPage: React.FC = () => {
         </div>
 
         {/* Right column: Chart */}
-        {isClient && (
-          <div className="flex justify-center items-center">
-            <ChartComponent />
-          </div>
-        )}
+        <div className="flex justify-center items-center">
+          <ChartComponent />
+        </div>
       </div>
     </div>
   );
