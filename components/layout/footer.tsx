@@ -15,7 +15,9 @@ export default function Footer() {
         <div>
           <Link className="flex items-center gap-2 text-black md:pt-1 dark:text-white" href="/">
             <LogoSquare size="sm" />
-            <span className="uppercase">Track Price</span>
+            <span className="uppercase">
+              Track Price <span className="text-red-500">CANADA</span>
+            </span>
           </Link>
         </div>
         <div className="flex flex-col gap-4 md:ml-auto">
@@ -44,9 +46,9 @@ export default function Footer() {
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
           <p className="md:ml-auto">
-            <a href="https://vercel.com" className="text-black dark:text-white">
-            © PetUs Inc. Toronto, Ontario, Canada
-            </a>
+            <span className="text-black dark:text-white">
+              Track Price <span className="text-red-500">CANADA</span>
+            </span>
           </p>
         </div>
       </div>

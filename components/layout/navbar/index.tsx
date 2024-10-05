@@ -4,33 +4,28 @@ import { Suspense } from 'react';
 import Search, { SearchSkeleton } from './search';
 
 export async function Navbar() {
-
   return (
-    <nav className="relative flex items-center justify-between p-4 lg:px-6">
-      <div className="block flex-none md:hidden">
-        <Suspense fallback={null}>
-        </Suspense>
-      </div>
-      <div className="flex w-full items-center">
-        <div className="flex w-full md:w-1/3">
+    <nav className="relative p-4 lg:px-6">
+      <div className="flex flex-col items-center w-full md:flex-row md:justify-between">
+        <div className="flex items-center justify-center mb-4 md:mb-0 md:justify-start md:w-1/3">
           <Link
             href="/"
             prefetch={true}
-            className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
+            className="flex items-center"
           >
             <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+            <div className="ml-2 text-sm font-medium uppercase">
               Track Price <span className="text-red-500">Canada</span>
             </div>
           </Link>
         </div>
-        <div className="hidden justify-center md:flex md:w-1/3">
+        <div className="w-full md:w-1/3 md:flex md:justify-center">
           <Suspense fallback={<SearchSkeleton />}>
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end md:w-1/3">
-        {/* Removed Modal */}
+        <div className="flex justify-end w-full md:w-1/3 mt-4 md:mt-0">
+          {/* Removed Modal */}
         </div>
       </div>
     </nav>
