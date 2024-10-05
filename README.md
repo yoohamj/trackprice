@@ -1,4 +1,4 @@
-# TrackPrice.ca
+# [TrackPrice.ca](http://www.trackprice.ca)
 
 Welcome to TrackPrice.ca, your go-to website for tracking prices from various vendors over time. Our platform provides a comprehensive history of item prices across different vendors, helping you find the best deals and make informed purchasing decisions.
 
@@ -19,14 +19,6 @@ Welcome to TrackPrice.ca, your go-to website for tracking prices from various ve
 - **Save Money**: By knowing the price trends and current lowest prices, you can make more cost-effective purchasing decisions.
 - **Stay Informed**: Keep track of how prices vary over time and avoid overpaying.
 - **Convenience**: Easily compare prices from multiple vendors in one place.
-
-## Getting Started
-
-To start tracking prices:
-
-1. Visit [TrackPrice.ca](http://www.trackprice.ca).
-2. Use the search bar to find your desired item.
-3. View the price history and compare current prices.
 
 ## Contributing
 
