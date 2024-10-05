@@ -20,7 +20,7 @@ export async function Navbar() {
           >
             <LogoSquare />
             <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-              Track Price
+              Track Price <span className="text-red-500">Canada</span>
             </div>
           </Link>
         </div>
