@@ -5,6 +5,7 @@ import type { Schema } from '../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
+import Link from "next/link"; // Import Link for navigation
 
 Amplify.configure(outputs);
 
@@ -19,6 +20,14 @@ export default function Results() {
   }
 
   return <div>
-    <button onClick={createTodo}>Add new todo</button>
+    <Table></Table>
+      {/* Button to navigate to the item page */}
+        <Link href="/item">
+        <button className="mt-4 p-2 bg-green-500 text-white rounded">
+          Go to Item Page
+        </button>
+      </Link>
   </div>
+  
+  
 }

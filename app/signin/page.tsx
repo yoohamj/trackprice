@@ -8,6 +8,7 @@ import type { Schema } from "@/amplify/data/resource";
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
+import Link from "next/link"; // Import Link for navigation
 
 Amplify.configure(outputs);
 
@@ -28,6 +29,13 @@ export default function App() {
             </a>
           </div>
           <button onClick={signOut}>Sign out</button>
+          {/* Button to navigate to the item page */}
+          {/* Link to navigate to the item page */}
+          <Link href="/item">
+            <button className="mt-4 p-2 bg-blue-500 text-white rounded">
+              Go to Item Page
+            </button>
+          </Link>
         </main>
       )}
     </Authenticator>

@@ -1,17 +1,26 @@
-'use client';
+"use client";
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function Search() {
   const searchParams = useSearchParams();
+  const router = useRouter(); // Get router instance to navigate programmatically
   const initialQuery = searchParams.get('q') || '';
   const [query, setQuery] = useState(initialQuery);
 
+  // Handle form submit when pressing Enter
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    if (query.trim() !== '') {
+      router.push(`/results?q=${encodeURIComponent(query)}`);
+    }
+  };
+
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="w-max-[550px] relative w-full lg:w-80 xl:w-full">
+    <form onSubmit={handleSubmit} className="w-max-[550px] relative w-full lg:w-80 xl:w-full">
       <input
         type="text"
         name="q"

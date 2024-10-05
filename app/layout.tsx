@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         <Navbar />
-        <main>
+        <main className="container mx-auto px-4 lg:px-8">
           {children} {/* Render the page content here */}
         </main>
       </body>
