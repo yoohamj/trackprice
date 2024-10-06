@@ -2,30 +2,47 @@ import LogoSquare from 'components/logo-square';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Search, { SearchSkeleton } from './search';
+import SignInModal from 'components/layout/navbar/signInModal';
 
 export async function Navbar() {
   return (
-    <nav className="relative p-4 lg:px-6">
-      <div className="flex flex-col items-center w-full md:flex-row md:justify-between">
-        <div className="flex items-center justify-center mb-4 md:mb-0 md:justify-start md:w-1/3">
+    <nav className="relative flex items-center justify-between p-4 lg:px-6">
+      <div className="block flex-none md:hidden">
+        {/* Mobile menu can be handled here */}
+      </div>
+      <div className="flex w-full items-center">
+        <div className="flex items-center w-full md:w-1/3">
+          {/* Logo and Site Name */}
           <Link
             href="/"
             prefetch={true}
-            className="flex items-center"
+            className="mr-2 flex items-center justify-center"
           >
             <LogoSquare />
-            <div className="ml-2 text-sm font-medium uppercase">
+            <div className="ml-2 flex-none text-sm font-medium uppercase md:block">
               Track Price <span className="text-red-500">Canada</span>
             </div>
           </Link>
+
+          {/* Forum Button */}
+          <Link
+            href="/forum"
+            className="ml-4 text-sm font-medium text-neutral-500 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
+          >
+            Forum
+          </Link>
         </div>
-        <div className="w-full md:w-1/3 md:flex md:justify-center">
+
+        {/* Search Component */}
+        <div className="hidden md:flex md:w-1/3 justify-center">
           <Suspense fallback={<SearchSkeleton />}>
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end w-full md:w-1/3 mt-4 md:mt-0">
-          {/* Removed Modal */}
+
+        {/* Sign In and Cart Modals */}
+        <div className="flex items-center justify-end md:w-1/3 space-x-4">
+          <SignInModal />
         </div>
       </div>
     </nav>
