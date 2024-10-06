@@ -5,6 +5,7 @@ import { Navbar } from 'components/layout/navbar';
 import { GeistSans } from 'geist/font/sans';
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
+import  Footer  from '@/components/layout/footer'
 
 Amplify.configure(outputs);
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="container mx-auto px-4 lg:px-8">
           {children} {/* Render the page content here */}
         </main>
+        <Footer />
       </body>
     </html>
   );

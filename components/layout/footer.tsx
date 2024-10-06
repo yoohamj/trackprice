@@ -25,7 +25,7 @@ export default function Footer() {
           <Link href="/about" className="hover:text-neutral-700 dark:hover:text-neutral-300">About Us</Link>
           <Link href="/services" className="hover:text-neutral-700 dark:hover:text-neutral-300">Services</Link>
           <Link href="/contact" className="hover:text-neutral-700 dark:hover:text-neutral-300">Contact</Link>
-          <Link href="/privacy-policy" className="hover:text-neutral-700 dark:hover:text-neutral-300">Privacy Policy</Link>
+          <Link href="/privacy" className="hover:text-neutral-700 dark:hover:text-neutral-300">Privacy Policy</Link>
         </div>
         <div className="md:ml-auto">
           <a
@@ -46,9 +46,9 @@ export default function Footer() {
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
           <p className="md:ml-auto">
-            <span className="text-black dark:text-white">
+            <Link href="/" className="text-black dark:text-white">
               Track Price <span className="text-red-500">CANADA</span>
-            </span>
+            </Link>
           </p>
         </div>
       </div>
