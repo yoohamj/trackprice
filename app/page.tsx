@@ -8,7 +8,6 @@ import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 
 import { ThreeItemGrid } from '@/components/grid/three-items';
-import  Footer  from '@/components/layout/footer'
 
 Amplify.configure(outputs);
 
@@ -25,7 +24,6 @@ export default function App() {
   return (
     <>
       <ThreeItemGrid />
-      <Footer />
     </>
       )
 }
